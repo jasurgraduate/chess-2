@@ -11,7 +11,6 @@ const ChessGame = () => {
   const [fen, setFen] = useState(new Chess().fen()); // Initialize with the starting FEN
   const [error, setError] = useState('');
   const [rotation, setRotation] = useState(0); // State to track board rotation
-
   const {
     game,
     onSquareClick,
