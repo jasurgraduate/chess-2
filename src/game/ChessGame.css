@@ -9,25 +9,6 @@ body, html {
     overflow: hidden; /* Hide scrollbars on the body */
 }
 
-@keyframes rotateBoard {
-    0% {
-      transform: rotate(0deg);
-      opacity: 1;
-    }
-    50% {
-      opacity: 0.5;
-    }
-    100% {
-      transform: rotate(180deg);
-      opacity: 1;
-    }
-  }
-  
-  .rotate-animation {
-    animation: rotateBoard 0.5s ease-in-out;
-  }
-  
-
 /* Container for centering the chessboard */
 .chessboard-container {
     display: flex;
