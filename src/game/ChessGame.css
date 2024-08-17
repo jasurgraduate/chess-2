@@ -89,8 +89,8 @@ a:hover {
 /* Responsive styles */
 @media (max-width: 768px) {
     .chessboard-wrapper {
-        width: 90vw; /* Adjust to fit within the viewport */
-        height: 90vw; /* Maintain aspect ratio */
+        width: 100vw; /* Adjust to fit within the viewport */
+        height: 100vw; /* Maintain aspect ratio */
     }
     
     .error-message, .game-state {
@@ -101,8 +101,8 @@ a:hover {
 
 @media (max-width: 480px) {
     .chessboard-wrapper {
-        width: 95vw; /* Adjust to fit within the viewport */
-        height: 95vw; /* Maintain aspect ratio */
+        width: 100vw; /* Adjust to fit within the viewport */
+        height: 100vw; /* Maintain aspect ratio */
     }
     
     .error-message, .game-state {
