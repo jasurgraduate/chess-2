@@ -21,10 +21,10 @@ body {
   position: fixed;
   top: 0; /* Ensure header sticks to the top */
   width: 100%;
-  background-color: #282c34;
+  background-color: #1E293B;
   font-size: 12px;
   padding: 10px;
-  color: white;
+  color: whitesmoke;
   z-index: 1000; /* Ensure header is above other content */
 }
 
@@ -38,8 +38,8 @@ h1 {
   position: fixed;
   bottom: 0; /* Ensure footer sticks to the bottom */
   width: 100%;
-  background-color: #282c34;
-  color: white;
+  background-color: #1E293B;
+  color: whitesmoke;
   text-align: center;
   padding: 10px;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
