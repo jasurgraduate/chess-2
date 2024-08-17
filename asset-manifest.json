@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/chess-2/static/css/main.24c5dd97.css",
+    "main.js": "/chess-2/static/js/main.c746cd5c.js",
+    "index.html": "/chess-2/index.html",
+    "main.24c5dd97.css.map": "/chess-2/static/css/main.24c5dd97.css.map",
+    "main.c746cd5c.js.map": "/chess-2/static/js/main.c746cd5c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.24c5dd97.css",
+    "static/js/main.c746cd5c.js"
+  ]
+}
