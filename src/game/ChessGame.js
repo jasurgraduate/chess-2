@@ -10,7 +10,7 @@ import './ChessGame.css';
 const ChessGame = () => {
   const [fen, setFen] = useState(new Chess().fen());
   const [error, setError] = useState('');
-  const [rotation, setRotation] = useState(0);
+  const [rotation, setRotation] = useState(180);
 
   const {
     game,
