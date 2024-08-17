@@ -8,9 +8,10 @@ import { useClickHandling } from './click';
 import './ChessGame.css';
 
 const ChessGame = () => {
-  const [fen, setFen] = useState(new Chess().fen()); // Initialize with the starting FEN
+  const [fen, setFen] = useState(new Chess().fen());
   const [error, setError] = useState('');
-  const [rotation, setRotation] = useState(0); // State to track board rotation
+  const [rotation, setRotation] = useState(0);
+
   const {
     game,
     onSquareClick,
@@ -20,18 +21,16 @@ const ChessGame = () => {
     optionSquares,
     rightClickedSquares,
     moveTo
-  } = useClickHandling(setFen); // Pass setFen here
+  } = useClickHandling(setFen);
 
   const onDrop = handleDrop(game, setFen, setError);
 
-  // Update rotation after each move
   useEffect(() => {
     if (game) {
-      setRotation(prevRotation => (prevRotation + 180) % 360); // Rotate 180 degrees
+      setRotation(prevRotation => (prevRotation + 180) % 360);
     }
   }, [fen, game]);
 
-  // Piece components with rotation based on whose turn it is
   const customPieces = useMemo(() => {
     const pieces = ["wP", "wN", "wB", "wR", "wQ", "wK", "bP", "bN", "bB", "bR", "bQ", "bK"];
     const pieceComponents = {};
@@ -42,7 +41,7 @@ const ChessGame = () => {
             width: squareWidth,
             height: squareWidth,
             backgroundImage: `url(/chess-2/img/${piece}.png)`,
-            backgroundSize: "100%",
+            backgroundSize: '100%',
             transform: `rotate(${rotation}deg)`,
           }}
         />
@@ -75,14 +74,14 @@ const ChessGame = () => {
             backgroundColor: '#f0d9b5',
             borderRadius: '8px',
             boxShadow: '0 4px 6px rgba(0, 0, 0, 0.1)',
-            transform: `rotate(${rotation}deg)`, // Rotate the board
+            transform: `rotate(${rotation}deg)`,
             transformOrigin: 'center',
           }}
           customDarkSquareStyle={customDarkSquareStyle}
           customLightSquareStyle={customLightSquareStyle}
           customSquareStyles={{
             ...optionSquares,
-            ...rightClickedSquares
+            ...rightClickedSquares,
           }}
           promotionToSquare={moveTo}
           showPromotionDialog={showPromotionDialog}
