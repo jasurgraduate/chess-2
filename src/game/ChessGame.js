@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react';
 import { Chessboard } from 'react-chessboard';
 import Error from './error';
 import { Chess } from 'chess.js';
+import GameOverState from './GameOverState';
 import { handleDrop } from './moves';
 import GameState from './gameState';
 import { useClickHandling } from './click';
@@ -62,6 +63,7 @@ const ChessGame = () => {
     <div className="chessboard-container">
     <Error message={error} />
     <GameState game={game} />
+    <GameOverState game={game} />
       <div className="chessboard-wrapper">
         <Chessboard
           position={fen}
