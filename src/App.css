@@ -26,15 +26,15 @@ body {
   /* Ensure header sticks to the top */
   width: 100%;
   background: linear-gradient(135deg, #2c3e50, #34495e);
-  font-size: 12px;
+  font-size: 8px;
   padding: 10px;
-  color: whitesmoke;
-  z-index: 1000;
+  color: white;
+  z-index: 1;
   /* Ensure header is above other content */
 }
 
 h1 {
-  font-size: 19px;
+  font-size: 15px;
   margin: 0;
 }
 
@@ -45,7 +45,7 @@ h1 {
   /* Ensure footer sticks to the bottom */
   width: 100%;
   background: linear-gradient(135deg, #2c3e50, #34495e);
-  color: whitesmoke;
+  color: white;
   text-align: center;
   padding: 10px;
   box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);

@@ -1,6 +1,7 @@
 import React from 'react';
+import './ChessGame.css'; // Import the CSS file for styling
 
-const GameOverState = ({ game, onClose, onRevenge }) => {
+const GameOverState = ({ game, onClose, isMinimized, onMinimize }) => {
   const gameOverMessage = () => {
     if (!game) {
       return 'Loading...';
@@ -12,7 +13,7 @@ const GameOverState = ({ game, onClose, onRevenge }) => {
 
     if (hasCheckmate && game.isCheckmate()) {
       const winner = game.turn() === 'w' ? 'Black' : 'White';
-      const kingImage = game.turn() === 'w' ? 'chess-2/img/bK.png' : 'chess-2/img/wK.png';
+      const kingImage = game.turn() === 'w' ? 'chess-1/img/bK.png' : 'chess-1/img/wK.png';
       return (
         <div>
           <div className="king-image-container">
@@ -34,15 +35,8 @@ const GameOverState = ({ game, onClose, onRevenge }) => {
   };
 
   const handleRevenge = () => {
-    if (typeof onRevenge === 'function') {
-      onRevenge(); // This should reset the game state or start a new game
-    }
-  };
-
-  const handleClose = () => {
-    if (typeof onClose === 'function') {
-      onClose(); // This should close the modal or current window
-    }
+    // Refreshes the page to start a new game
+    window.location.reload(); 
   };
 
   const message = gameOverMessage();
@@ -51,12 +45,24 @@ const GameOverState = ({ game, onClose, onRevenge }) => {
   }
 
   return (
-    <div className="game-over-state">
-      <button className="close-button" onClick={handleClose}>X Close</button>
-      <div className="game-over-message">
-        {message}
+    <div className={`game-over-overlay ${isMinimized ? 'minimized' : ''}`}>
+      <div className="game-over-state">
+        <div className="game-over-header">
+          <button className="minimize-button" onClick={onMinimize}>
+            {isMinimized ? '🟪 Expand' : '➖ Minimize'}
+          </button>
+          <button className="close-button" onClick={onClose}>❎</button>
+        </div>
+        {!isMinimized && (
+          <div className="game-over-message">
+            {message}
+            {/* Add the "REVENGE?" button */}
+            <div className="revenge-button-container">
+              <button className="revenge-button" onClick={handleRevenge}>⚒️ REVENGE? 💪🏻</button>
+            </div>
+          </div>
+        )}
       </div>
-      <button className="revenge-button" onClick={handleRevenge}>🔁 REVENGE?</button>
     </div>
   );
 };
